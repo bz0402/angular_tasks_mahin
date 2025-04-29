@@ -1,0 +1,49 @@
+<div class="container py-3">
+  <div class="row mb-4 align-items-end g-2">
+    <!-- Search Input -->
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-text bg-white border-end-0">
+          <i class="bi bi-search text-muted"></i>
+        </span>
+        <input type="text" [(ngModel)]="searchTerm" class="form-control border-start-0"
+          placeholder="Search by title or author" />
+      </div>
+    </div>
+
+    <!-- Genre Dropdown -->
+    <div class="col-md-3">
+      <div class="input-group">
+        <span class="input-group-text bg-white border-end-0">
+          <i class="bi bi-bookmark text-muted"></i>
+        </span>
+        <select class="form-select border-start-0" [(ngModel)]="selectedGenre">
+          <option value="">All Genres</option>
+          <option *ngFor="let genre of genres">{{ genre }}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Sort Dropdown -->
+    <div class="col-md-3">
+      <div class="input-group">
+        <span class="input-group-text bg-white border-end-0">
+          <i class="bi bi-sort-alpha-down text-muted"></i>
+        </span>
+        <select class="form-select border-start-0" [(ngModel)]="sortBy">
+          <option value="title">Sort by Title</option>
+          <option value="author">Sort by Author</option>
+          <option value="date">Sort by Date</option>
+          <option value="rating">Sort by Rating</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Book List -->
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let book of books">
+      <app-book-card [book]="book"></app-book-card>
+    </div>
+  </div>
+</div>
