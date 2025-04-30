@@ -16,7 +16,7 @@ export class SortBookByPipe implements PipeTransform {
     } else if (sortBy === 'author') {
       return books.sort((a, b) => a.author.localeCompare(b.author));
     } else if (sortBy === 'date') {
-      return books.sort((a, b) => new Date(b.added!).getTime() - new Date(a.added!).getTime());
+      return books.sort((a, b) => new Date(a.added!).getTime() - new Date(b.added!).getTime());
     } else if (sortBy === 'rating') {
       return books.sort((a, b) => b.rating - a.rating);
     } else {

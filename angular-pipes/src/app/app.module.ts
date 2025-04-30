@@ -11,6 +11,7 @@ import { TimeAgoPipe } from './pipes/time-ago.pipe';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { BookSearchPipe } from './pipes/book-search.pipe';
 import { SortBookByPipe } from './pipes/sort-book-by.pipe';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SortBookByPipe } from './pipes/sort-book-by.pipe';
     TimeAgoPipe,
     AddBookComponent,
     BookSearchPipe,
-    SortBookByPipe
+    SortBookByPipe,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,312 @@
+[
+  {
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genre": "Romance",
+    "published": "1813-01-28T00:00:00.000Z",
+    "status": "Read",
+    "rating": 5,
+    "summary": "A classic novel of manners.",
+    "added": "2025-04-29T10:00:00.000Z"
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Fiction",
+    "published": "1960-07-11T00:00:00.000Z",
+    "status": "Read",
+    "rating": 5,
+    "summary": "A powerful story about justice and prejudice.",
+    "added": "2025-04-29T10:05:00.000Z"
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Dystopian",
+    "published": "1949-06-08T00:00:00.000Z",
+    "status": "Unread",
+    "rating": 4,
+    "summary": "A chilling vision of a totalitarian future.",
+    "added": "2025-04-29T10:10:00.000Z"
+  },
+  {
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "published": "1954-07-29T00:00:00.000Z",
+    "status": "Read",
+    "rating": 5,
+    "summary": "An epic tale of good versus evil in Middle-earth.",
+    "added": "2025-04-29T10:15:00.000Z"
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Classic",
+    "published": "1925-04-10T00:00:00.000Z",
+    "status": "Read",
+    "rating": 4,
+    "summary": "A story of wealth, love, and the American Dream.",
+    "added": "2025-04-29T10:20:00.000Z"
+  },
+  {
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "genre": "Magical Realism",
+    "published": "1967-05-30T00:00:00.000Z",
+    "status": "Unread",
+    "rating": 5,
+    "summary": "A multi-generational story of the Buendía family.",
+    "added": "2025-04-29T10:25:00.000Z"
+  },
+  {
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "genre": "Dystopian",
+    "published": "1932-01-01T00:00:00.000Z",
+    "status": "Read",
+    "rating": 4,
+    "summary": "A satirical vision of a future society.",
+    "added": "2025-04-29T10:30:00.000Z"
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "genre": "Literary Fiction",
+    "published": "1951-07-16T00:00:00.000Z",
+    "status": "Unread",
+    "rating": 3,
+    "summary": "A coming-of-age story told by Holden Caulfield.",
+    "added": "2025-04-29T10:35:00.000Z"
+  },
+  {
+    "title": "The Hitchhiker's Guide to the Galaxy",
+    "author": "Douglas Adams",
+    "genre": "Science Fiction",
+    "published": "1979-10-12T00:00:00.000Z",
+    "status": "Read",
+    "rating": 5,
+    "summary": "A comedic science fiction adventure.",
+    "added": "2025-04-29T10:40:00.000Z"
+  },
+  {
+    "title": "Moby Dick",
+    "author": "Herman Melville",
+    "genre": "Adventure",
+    "published": "1851-10-18T00:00:00.000Z",
+    "status": "Unread",
+    "rating": 4,
+    "summary": "The story of Captain Ahab's obsession with a white whale.",
+    "added": "2025-04-29T10:45:00.000Z"
+  },
+  {
+    "title": "Little Women",
+    "author": "Louisa May Alcott",
+    "genre": "Classic",
+    "published": "1868-09-30T00:00:00.000Z",
+    "status": "Read",
+    "rating": 4,
+    "summary": "The story of the March sisters.",
+    "added": "2025-04-29T10:50:00.000Z"
+  },
+  {
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "genre": "Gothic Romance",
+    "published": "1847-10-16T00:00:00.000Z",
+    "status": "Unread",
+    "rating": 5,
+    "summary": "The story of Jane Eyre's journey and love.",
+    "added": "2025-04-29T10:55:00.000Z"
+  },
+  {
+    "title": "The Picture of Dorian Gray",
+    "author": "Oscar Wilde",
+    "genre": "Philosophical Fiction",
+    "published": "1890-07-01T00:00:00.000Z",
+    "status": "Read",
+    "rating": 4,
+    "summary": "A novel about beauty, morality, and corruption.",
+    "added": "2025-04-29T11:00:00.000Z"
+  },
+  {
+    "title": "The Count of Monte Cristo",
+    "author": "Alexandre Dumas",
+    "genre": "Adventure",
+    "published": "1844-08-28T00:00:00.000Z",
+    "status": "Unread",
+    "rating": 5,
+    "summary": "A tale of revenge and justice.",
+    "added": "2025-04-29T11:05:00.000Z"
+  },
+  {
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "genre": "Gothic Horror",
+    "published": "1818-01-01T00:00:00.000Z",
+    "status": "Read",
+    "rating": 4,
+    "summary": "The story of Victor Frankenstein and his creation.",
+    "added": "2025-04-29T11:10:00.000Z"
+  },
+  {
+    "title": "Dracula",
+    "author": "Bram Stoker",
+    "genre": "Horror",
+    "published": "1897-05-26T00:00:00.000Z",
+    "status": "Unread",
+    "rating": 4,
+    "summary": "The classic vampire novel.",
+    "added": "2025-04-29T11:15:00.000Z"
+  },
+  {
+    "title": "The Shining",
+    "author": "Stephen King",
+    "genre": "Horror",
+    "published": "1977-01-28T00:00:00.000Z",
+    "status": "Read",
+    "rating": 5,
+    "summary": "A psychological horror novel set in a haunted hotel.",
+    "added": "2025-04-29T11:20:00.000Z"
+  },
+  {
+    "title": "And Then There Were None",
+    "author": "Agatha Christie",
+    "genre": "Mystery",
+    "published": "1939-11-06T00:00:00.000Z",
+    "status": "Unread",
+    "rating": 5,
+    "summary": "A classic whodunit mystery.",
+    "added": "2025-04-29T11:25:00.000Z"
+  },
+  {
+    "title": "The Da Vinci Code",
+    "author": "Dan Brown",
+    "genre": "Thriller",
+    "published": "2003-03-18T00:00:00.000Z",
+    "status": "Read",
+    "rating": 4,
+    "summary": "A mystery involving art, history, and secret societies.",
+    "added": "2025-04-29T11:30:00.000Z"
+  },
+  {
+    "title": "Gone Girl",
+    "author": "Gillian Flynn",
+    "genre": "Mystery",
+    "published": "2012-06-05T00:00:00.000Z",
+    "status": "Unread",
+    "rating": 4,
+    "summary": "A psychological thriller about a marriage gone wrong.",
+    "added": "2025-04-29T11:35:00.000Z"
+  },
+  {
+    "title": "The Hunger Games",
+    "author": "Suzanne Collins",
+    "genre": "Young Adult",
+    "published": "2008-09-14T00:00:00.000Z",
+    "status": "Read",
+    "rating": 4,
+    "summary": "A dystopian novel about a televised fight to the death.",
+    "added": "2025-04-29T11:40:00.000Z"
+  },
+  {
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "genre": "Fantasy",
+    "published": "1997-06-26T00:00:00.000Z",
+    "status": "Read",
+    "rating": 5,
+    "summary": "The first book in the Harry Potter series.",
+    "added": "2025-04-29T11:45:00.000Z"
+  },
+  {
+    "title": "The Fault in Our Stars",
+    "author": "John Green",
+    "genre": "Young Adult",
+    "published": "2012-01-10T00:00:00.000Z",
+    "status": "Read",
+    "rating": 4,
+    "summary": "A poignant story about teenagers with cancer.",
+    "added": "2025-04-29T11:50:00.000Z"
+  },
+  {
+    "title": "The Little Prince",
+    "author": "Antoine de Saint-Exupéry",
+    "genre": "Children's Literature",
+    "published": "1943-04-06T00:00:00.000Z",
+    "status": "Read",
+    "rating": 5,
+    "summary": "A philosophical fable about a young prince.",
+    "added": "2025-04-29T11:55:00.000Z"
+  },
+  {
+    "title": "Where the Wild Things Are",
+    "author": "Maurice Sendak",
+    "genre": "Children's Literature",
+    "published": "1963-01-01T00:00:00.000Z",
+    "status": "Read",
+    "rating": 4,
+    "summary": "A classic picture book about a boy's imagination.",
+    "added": "2025-04-29T12:00:00.000Z"
+  },
+  {
+    "title": "The Very Hungry Caterpillar",
+    "author": "Eric Carle",
+    "genre": "Children's Literature",
+    "published": "1969-03-20T00:00:00.000Z",
+    "status": "Read",
+    "rating": 5,
+    "summary": "A beloved book about a caterpillar's transformation.",
+    "added": "2025-04-29T12:05:00.000Z"
+  },
+  {
+    "title": "Thinking in Systems",
+    "author": "Donella H. Meadows",
+    "genre": "Non-fiction",
+    "published": "2008-01-01T00:00:00.000Z",
+    "status": "Unread",
+    "rating": 5,
+    "summary": "A primer on systems thinking.",
+    "added": "2025-04-29T12:10:00.000Z"
+  },
+  {
+    "title": "The 7 Habits of Highly Effective People",
+    "author": "Stephen Covey",
+    "genre": "Self-help",
+    "published": "1989-08-15T00:00:00.000Z",
+    "status": "Read",
+    "rating": 4,
+    "summary": "A guide to personal and professional effectiveness.",
+    "added": "2025-04-29T12:15:00.000Z"
+  },
+  {
+    "title": "Influence: The Psychology of Persuasion",
+    "author": "Robert Cialdini",
+    "genre": "Psychology",
+    "published": "1984-01-01T00:00:00.000Z",
+    "status": "Unread",
+    "rating": 5,
+    "summary": "Explores the science behind persuasion.",
+    "added": "2025-04-29T12:20:00.000Z"
+  },
+  {
+    "title": "Zero to One",
+    "author": "Peter Thiel",
+    "genre": "Business",
+    "published": "2014-09-16T00:00:00.000Z",
+    "status": "Unread",
+    "rating": 4,
+    "summary": "Notes on startups, or how to build the future.",
+    "added": "2025-04-29T12:25:00.000Z"
+  },
+  {
+    "title": "Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future",
+    "author": "Ashlee Vance",
+    "genre": "Biography",
+    "published": "2015-05-19T00:00:00.000Z",
+    "status": "Read",
+    "rating": 4,
+    "summary": "The biography of the visionary entrepreneur.",
+    "added": "2025-04-29T12:30:00.000Z"
+  }
+]

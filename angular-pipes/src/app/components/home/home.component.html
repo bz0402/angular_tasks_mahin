@@ -32,10 +32,16 @@
     </div>
   </div>
 
-  <!-- Book List -->
   <div class="row">
     <div class="col-md-4 mb-4" *ngFor="let book of books | bookSearch:searchTerm | sortBookBy:sortBy">
       <app-book-card [book]="book"></app-book-card>
+    </div>
+    <div class="container my-5" *ngIf="(books | bookSearch:searchTerm | sortBookBy:sortBy)?.length === 0">
+      <div class="d-flex flex-column align-items-center justify-content-center">
+        <i class="bi bi-box2 display-5 text-muted mb-2"></i>
+        <span class="fs-4 text-secondary">No books found</span>
+        <small class="text-muted">Try searching with different keywords</small>
+      </div>
     </div>
   </div>
 </div>
