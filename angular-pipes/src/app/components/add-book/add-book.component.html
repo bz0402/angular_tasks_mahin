@@ -1,0 +1,89 @@
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()" class="p-4 rounded shadow-sm bg-white border">
+  <div class="d-flex justify-content-between align-items-baseline">
+    <h3 class="fw-bold text-success">Add Book</h3>
+    <p class="text-muted mb-9">All fields marked with <span class="text-danger">*</span> are required.</p>
+  </div>
+
+  <hr class="mt-0 mb-4" />
+
+  <div class="row g-3">
+    <!-- Title -->
+    <div class="col-md-6">
+      <label class="form-label">Title<span class="text-danger">*</span></label>
+      <input class="form-control"
+        [ngClass]="{'is-invalid': bookForm.get('title')?.touched && bookForm.get('title')?.invalid}"
+        formControlName="title" placeholder="Enter book title" />
+      <div class="invalid-feedback">Title is required.</div>
+    </div>
+
+    <!-- Author -->
+    <div class="col-md-6">
+      <label class="form-label">Author<span class="text-danger">*</span></label>
+      <input class="form-control"
+        [ngClass]="{'is-invalid': bookForm.get('author')?.touched && bookForm.get('author')?.invalid}"
+        formControlName="author" placeholder="Author name" />
+      <div class="invalid-feedback">Author is required.</div>
+    </div>
+
+    <!-- Genre -->
+    <div class="col-md-6">
+      <label class="form-label">Genre<span class="text-danger">*</span></label>
+      <select class="form-select" formControlName="genre"
+        [ngClass]="{'is-invalid': bookForm.get('genre')?.touched && bookForm.get('genre')?.invalid}">
+        <option value="" disabled selected>Select genre</option>
+        <option *ngFor="let genre of genres" [value]="genre">{{ genre }}</option>
+      </select>
+      <div class="invalid-feedback">Genre is required.</div>
+    </div>
+
+    <!-- Published -->
+    <div class="col-md-6">
+      <label class="form-label">Published<span class="text-danger">*</span></label>
+      <input type="date" class="form-control"
+        [ngClass]="{'is-invalid': bookForm.get('published')?.touched && bookForm.get('published')?.invalid}"
+        formControlName="published" />
+      <div class="invalid-feedback">Published date is required.</div>
+    </div>
+
+    <!-- Status -->
+    <div class="col-md-6">
+      <label class="form-label">Status<span class="text-danger">*</span></label>
+      <select class="form-select" formControlName="status">
+        <option value="Read">Read</option>
+        <option value="Unread">Unread</option>
+      </select>
+    </div>
+
+    <!-- Rating -->
+    <div class="col-md-6">
+      <label class="form-label">Rating<span class="text-danger">*</span></label>
+      <input type="number" min="1" max="5" class="form-control"
+        [ngClass]="{'is-invalid': bookForm.get('rating')?.touched && bookForm.get('rating')?.invalid}"
+        formControlName="rating" />
+      <div class="invalid-feedback">Rating must be between 1 and 5.</div>
+    </div>
+
+    <!-- Summary -->
+    <div class="col-12">
+      <label class="form-label">Summary</label>
+      <textarea rows="4" class="form-control" formControlName="summary" placeholder="Write about book..."></textarea>
+    </div>
+
+    <!-- Submit -->
+    <div class="col-12 mt-4">
+      <div class="d-flex justify-content-between">
+        <button class="btn btn-success" type="submit" [disabled]="bookForm.invalid">
+          <i class="bi bi-plus-circle me-2"></i>Add Book
+        </button>
+        <div>
+          <button class="btn btn-secondary ms-2" type="reset">
+            <i class="bi bi-arrow-clockwise me-2"></i>Reset
+          </button>
+          <button class="btn btn-danger ms-2" type="button" routerLink="/home">
+            <i class="bi bi-x-circle me-2"></i>Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

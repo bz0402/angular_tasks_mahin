@@ -5,9 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BookCardComponent } from './components/book-card/book-card.component';
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
+import { AddBookComponent } from './components/add-book/add-book.component';
+import { BookSearchPipe } from './pipes/book-search.pipe';
+import { SortBookByPipe } from './pipes/sort-book-by.pipe';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,16 @@ import { TimeAgoPipe } from './pipes/time-ago.pipe';
     NavbarComponent,
     HomeComponent,
     BookCardComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
+    AddBookComponent,
+    BookSearchPipe,
+    SortBookByPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

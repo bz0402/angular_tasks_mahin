@@ -1,7 +1,7 @@
-<div class="container py-3">
-  <div class="row mb-4 align-items-end g-2">
-    <!-- Search Input -->
-    <div class="col-md-6">
+<div class="container py-2">
+
+  <div class="row mb-4 g-2 border rounded-4 shadow-sm p-3 bg-success bg-opacity-10">
+    <div class="col-md-7 m-0">
       <div class="input-group">
         <span class="input-group-text bg-white border-end-0">
           <i class="bi bi-search text-muted"></i>
@@ -11,21 +11,7 @@
       </div>
     </div>
 
-    <!-- Genre Dropdown -->
-    <div class="col-md-3">
-      <div class="input-group">
-        <span class="input-group-text bg-white border-end-0">
-          <i class="bi bi-bookmark text-muted"></i>
-        </span>
-        <select class="form-select border-start-0" [(ngModel)]="selectedGenre">
-          <option value="">All Genres</option>
-          <option *ngFor="let genre of genres">{{ genre }}</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Sort Dropdown -->
-    <div class="col-md-3">
+    <div class="col-md-3 m-0">
       <div class="input-group">
         <span class="input-group-text bg-white border-end-0">
           <i class="bi bi-sort-alpha-down text-muted"></i>
@@ -38,11 +24,17 @@
         </select>
       </div>
     </div>
+
+    <div class="col-md-2 text-end m-0">
+      <a class="btn btn-dark fw-bold" [routerLink]="'/add-book'">
+        <i class="bi bi-plus-lg me-1"></i> Add
+      </a>
+    </div>
   </div>
 
   <!-- Book List -->
   <div class="row">
-    <div class="col-md-4 mb-4" *ngFor="let book of books">
+    <div class="col-md-4 mb-4" *ngFor="let book of books | bookSearch:searchTerm | sortBookBy:sortBy">
       <app-book-card [book]="book"></app-book-card>
     </div>
   </div>
