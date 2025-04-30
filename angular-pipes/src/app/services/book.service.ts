@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Book } from 'models/book.model';
+import { delay, map, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,18 +14,25 @@ export class BookService {
     }
   }
 
-  getBooks(): Book[] {
+  getBooks(): Observable<Book[]> {
     const books = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
-    return books.map((b: any) => ({
-      ...b,
-      published: new Date(b.published),
-      added: new Date(b.added)
-    }));
+
+    return of(books).pipe(
+      delay(10000),
+      map((books: Book[]) =>
+        books.map((book: Book) => ({
+          ...book,
+          published: new Date(book.published),
+          added: new Date(book.added!)
+        }))
+      )
+    );
   }
 
   addBook(book: Book): void {
-    const books = this.getBooks();
-    books.push(book);
-    localStorage.setItem(this.storageKey, JSON.stringify(books));
+    this.getBooks().subscribe((books: Book[]) => {
+      books.push(book);
+      localStorage.setItem(this.storageKey, JSON.stringify(books));
+    });
   }
 }

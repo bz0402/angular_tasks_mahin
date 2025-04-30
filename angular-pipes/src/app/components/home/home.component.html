@@ -32,15 +32,67 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-4 mb-4" *ngFor="let book of books | bookSearch:searchTerm | sortBookBy:sortBy">
-      <app-book-card [book]="book"></app-book-card>
+  <ng-container *ngIf="books$ | async as books">
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let book of books | bookSearch: searchTerm | sortBookBy: sortBy">
+        <app-book-card [book]="book"></app-book-card>
+      </div>
+
+      <div class="container my-5" *ngIf="(books | bookSearch: searchTerm | sortBookBy: sortBy)?.length === 0">
+        <div class="d-flex flex-column align-items-center justify-content-center">
+          <i class="bi bi-box2 display-5 text-muted mb-2"></i>
+          <span class="fs-4 text-secondary">No books found</span>
+          <small class="text-muted">Try searching with different keywords</small>
+        </div>
+      </div>
     </div>
-    <div class="container my-5" *ngIf="(books | bookSearch:searchTerm | sortBookBy:sortBy)?.length === 0">
-      <div class="d-flex flex-column align-items-center justify-content-center">
-        <i class="bi bi-box2 display-5 text-muted mb-2"></i>
-        <span class="fs-4 text-secondary">No books found</span>
-        <small class="text-muted">Try searching with different keywords</small>
+  </ng-container>
+
+  <div class="row" *ngIf="isLoading">
+    <div class="col-md-4 mb-4" *ngFor="let skeleton of [1, 2, 3, 4, 5, 6]">
+      <div class="card shadow-sm rounded-4">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <!-- Header -->
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <div class="w-75">
+              <div class="placeholder-glow mb-1">
+                <span class="placeholder col-10 rounded-2"></span>
+              </div>
+              <div class="placeholder-glow">
+                <span class="placeholder col-6 rounded-2"></span>
+              </div>
+            </div>
+            <div class="text-end">
+              <div class="placeholder-glow mb-2">
+                <span class="placeholder col-6 rounded-pill"></span>
+              </div>
+              <div class="placeholder-glow">
+                <span class="placeholder col-5 rounded-pill"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Book Details -->
+          <div class="mb-3 small">
+            <div class="placeholder-glow mb-2">
+              <span class="placeholder col-7 rounded-2"></span>
+            </div>
+            <div class="placeholder-glow mb-2">
+              <span class="placeholder col-8 rounded-2"></span>
+            </div>
+            <div class="placeholder-glow">
+              <span class="placeholder col-5 rounded-pill"></span>
+            </div>
+          </div>
+
+          <!-- Summary -->
+          <div class="mt-auto">
+            <div class="placeholder-glow">
+              <span class="placeholder col-12 rounded-2 mb-1"></span>
+              <span class="placeholder col-10 rounded-2"></span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

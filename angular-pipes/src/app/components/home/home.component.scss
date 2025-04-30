@@ -1,0 +1,7 @@
+.book-scroll-container {
+  max-height: calc(
+    100vh - 180px
+  ); /* Adjust height based on navbar + filter size */
+  overflow-y: auto;
+  padding-right: 8px;
+}
