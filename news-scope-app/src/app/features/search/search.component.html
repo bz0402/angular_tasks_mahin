@@ -1,0 +1,45 @@
+<form [formGroup]="searchForm" class="mt-2 mb-5 mx-5">
+  <div class="position-relative">
+    <!-- Input Field -->
+    <input formControlName="query" type="text" class="form-control shadow-sm rounded-pill px-5 py-3 border-2"
+      placeholder="Start typing to search" />
+    <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary fs-5"></i>
+
+    <!-- Loading Spinner -->
+    <div *ngIf="isLoading" class="position-absolute top-50 end-0 translate-middle-y me-4">
+      <div class="spinner-border spinner-border-sm border-2 text-success" role="status"></div>
+    </div>
+  </div>
+
+  <!-- Helpful Text -->
+  <div class="form-text text-muted ms-5">
+    <span class="fw-bold">Tip:</span> Use keywords like <code class="fw-semibold fst-italic">"technology"</code>,
+    <code class="fw-semibold fst-italic">"health"</code>, or <code class="fw-semibold fst-italic">"finance"</code> to
+    discover the latest
+    news tailored to your interests.
+  </div>
+</form>
+
+<div *ngIf="articles.length > 0" class="mb-3 mx-2 text-muted">
+  Showing <strong>{{ articles.length }}</strong> of <strong>{{ totalResults }}</strong> result{{ totalResults > 1 ? 's'
+  : '' }}
+</div>
+
+<!-- Skeleton loading -->
+<div *ngIf="isLoading" class="row g-4">
+  <div class="col-md-6 col-lg-4" *ngFor="let _ of [1,2,3,4,5,6]">
+    <app-skeleton-search-article-card></app-skeleton-search-article-card>
+  </div>
+</div>
+
+<!-- Article List -->
+<div *ngIf="articles.length > 0" class="row g-4">
+  <div *ngFor="let article of articles" class="col-md-6 col-lg-4">
+    <app-search-article-card [article]="article"></app-search-article-card>
+  </div>
+</div>
+
+<!-- No Results -->
+<div *ngIf="articles.length === 0 && !isLoading" class="text-center text-muted mt-5 opacity-75">
+  <p>No articles found. Try a different search or check your query for better results.</p>
+</div>

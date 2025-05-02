@@ -4,17 +4,42 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
+import { SearchComponent } from './features/search/search.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ApiKeyInterceptor } from './core/interceptors/api-key.interceptor';
+import { HomeComponent } from './features/home/home.component';
+import { SkeletonSearchArticleCardComponent } from './shared/skeleton-search-article-card/skeleton-search-article-card.component';
+import { SkeletonHomeArticleCardComponent } from './shared/skeleton-home-article-card/skeleton-home-article-card.component';
+import { CommonModule } from '@angular/common';
+import { AppHomeArticleCardComponent } from './shared/home-article-card/home-article-card.component';
+import { SearchArticleCardComponent } from './shared/search-article-card/search-article-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SearchComponent,
+    HomeComponent,
+    SkeletonSearchArticleCardComponent,
+    SkeletonHomeArticleCardComponent,
+    AppHomeArticleCardComponent,
+    SearchArticleCardComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
-    LayoutModule
+    LayoutModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiKeyInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
