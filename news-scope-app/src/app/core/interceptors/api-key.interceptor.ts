@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class ApiKeyInterceptor implements HttpInterceptor {
-  private readonly API_KEY = '93d28bd3986f44f0a8363a58ca8023d7';
+  private readonly API_KEY = environment.apiKey; // Using environment variable is best practice
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (!req.url.includes('newsapi.org')) {
@@ -12,8 +13,8 @@ export class ApiKeyInterceptor implements HttpInterceptor {
     }
 
     const clonedRequest = req.clone({
-      setHeaders: {
-        'X-Api-Key': this.API_KEY
+      setParams: {
+        apiKey: this.API_KEY
       }
     });
 
