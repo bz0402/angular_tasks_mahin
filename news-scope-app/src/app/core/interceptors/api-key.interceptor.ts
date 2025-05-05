@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class ApiKeyInterceptor implements HttpInterceptor {
-  private readonly API_KEY = environment.apiKey; // Using environment variable is best practice
+  private readonly API_KEY = environment.apiKey;
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (!req.url.includes('newsapi.org')) {

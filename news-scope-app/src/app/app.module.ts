@@ -14,6 +14,8 @@ import { SkeletonHomeArticleCardComponent } from './shared/skeleton-home-article
 import { CommonModule } from '@angular/common';
 import { AppHomeArticleCardComponent } from './shared/home-article-card/home-article-card.component';
 import { SearchArticleCardComponent } from './shared/search-article-card/search-article-card.component';
+import { ErrorComponent } from './shared/error/error.component';
+import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { SearchArticleCardComponent } from './shared/search-article-card/search-
     SkeletonSearchArticleCardComponent,
     SkeletonHomeArticleCardComponent,
     AppHomeArticleCardComponent,
-    SearchArticleCardComponent
+    SearchArticleCardComponent,
+    ErrorComponent
   ],
   imports: [
     CommonModule,
@@ -37,6 +40,11 @@ import { SearchArticleCardComponent } from './shared/search-article-card/search-
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ApiKeyInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
       multi: true
     }
   ],
