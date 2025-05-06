@@ -24,9 +24,9 @@
 
     <div class="d-flex justify-content-between flex-wrap text-muted small mb-2">
       <span class="badge bg-light text-black border border-1"><i class="bi bi-translate me-1"></i>{{
-        source.language.toUpperCase() }}</span>
+        getLanguageName(source.language) }}</span>
       <span class="badge bg-light text-black border border-1"><i class="bi bi-geo-alt me-1"></i>{{
-        source.country.toUpperCase() }}</span>
+        getCountryName(source.country) }}</span>
     </div>
 
     <a [href]="source.url" target="_blank"
