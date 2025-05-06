@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { SearchComponent } from './features/search/search.component';
 import { HomeComponent } from './features/home/home.component';
 import { ErrorComponent } from './shared/error/error.component';
+import { OurSourcesComponent } from './features/our-sources/our-sources.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'our-sources', component: OurSourcesComponent },
 
   // Error handling routes can be added here
   { path: 'unauthorized', component: ErrorComponent, data: { code: 401 } },

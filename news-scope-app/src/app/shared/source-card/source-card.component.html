@@ -1,0 +1,37 @@
+<div class="card h-100 shadow-sm border rounded-4 position-relative overflow-hidden d-flex flex-column">
+  <!-- Source Badge -->
+  <span
+    class="badge bg-white text-success border border-success position-absolute top-0 end-0 m-2 rounded-pill z-2 px-3 py-1">
+    {{ source.category | titlecase }}
+  </span>
+
+  <!-- Placeholder Banner (since no image from source API) -->
+  <div class="bg-success-subtle d-flex align-items-center justify-content-center w-100" style="height: 180px;">
+    <i class="bi bi-broadcast-pin fs-1 text-success"></i>
+  </div>
+
+  <!-- Body -->
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title fw-semibold">
+      <a [href]="source.url" target="_blank" class="text-dark text-decoration-none">
+        {{ source.name }}
+      </a>
+    </h5>
+
+    <p class="card-text small text-muted mb-2" *ngIf="source.description">
+      {{ source.description }}
+    </p>
+
+    <div class="d-flex justify-content-between flex-wrap text-muted small mb-2">
+      <span class="badge bg-light text-black border border-1"><i class="bi bi-translate me-1"></i>{{
+        source.language.toUpperCase() }}</span>
+      <span class="badge bg-light text-black border border-1"><i class="bi bi-geo-alt me-1"></i>{{
+        source.country.toUpperCase() }}</span>
+    </div>
+
+    <a [href]="source.url" target="_blank"
+      class="btn btn-light btn-sm fw-bold mt-auto text-success border rounded-pill">
+      <i class="bi bi-box-arrow-up-right me-1"></i> Visit Source's Site
+    </a>
+  </div>
+</div>

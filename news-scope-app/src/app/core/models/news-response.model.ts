@@ -1,4 +1,3 @@
-// src/app/core/models/news-response.model.ts
 export interface NewsArticle {
   source: {
     id: string | null;
@@ -17,4 +16,19 @@ export interface NewsResponse {
   status: string;
   totalResults: number;
   articles: NewsArticle[];
+}
+
+export interface NewsSource {
+  id: string;
+  name: string;
+  description: string;
+  url: string;
+  category: string;
+  language: string;
+  country: string;
+}
+
+export interface SourcesResponse {
+  status: string;
+  sources: NewsSource[];
 }

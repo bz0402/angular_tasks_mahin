@@ -5,19 +5,19 @@
       <span class="fw-medium text-success">NewsScope</span>
     </a>
 
-    <!-- Show Search or Top Headlines button based on current route -->
-    <ng-container *ngIf="currentRoute === '/search'; else showSearchBtn">
-      <a routerLink="/"
+    <div class="d-flex gap-2">
+      <a routerLink="/" routerLinkActive="bg-success text-white" [routerLinkActiveOptions]="{ exact: true }"
         class="btn btn-light btn-sm align-items-center rounded-pill fw-bold text-success border border-2 py-1 px-3">
-        <i class="bi bi-house me-1"></i> Top Headlines
+        <i class="bi bi-lightning-fill me-1"></i> Top Headlines
       </a>
-    </ng-container>
-
-    <ng-template #showSearchBtn>
-      <a routerLink="/search"
+      <a routerLink="/our-sources" routerLinkActive="bg-success text-white"
+        class="btn btn-light btn-sm align-items-center rounded-pill fw-bold text-success border border-2 py-1 px-3">
+        <i class="bi bi-journal-richtext me-1"></i> News Sources
+      </a>
+      <a routerLink="/search" routerLinkActive="bg-success text-white"
         class="btn btn-light btn-sm align-items-center rounded-pill fw-bold text-success border border-2 py-1 px-3">
         <i class="bi bi-search me-1"></i> Search News
       </a>
-    </ng-template>
+    </div>
   </div>
 </nav>

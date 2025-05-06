@@ -1,0 +1,87 @@
+<div class="container my-4">
+  <h2 class="fw-bold mb-4 text-success">📡 News Sources</h2>
+
+  <div class="card mb-4">
+
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">Filter Sources</h5>
+      <button type="button" class="btn btn-sm d-flex align-items-center gap-1"
+        [ngClass]="hasActiveFilters() ? 'btn-danger' : 'btn-secondary'" [disabled]="!hasActiveFilters()"
+        (click)="resetFilters()">
+        <i class="bi bi-slash-circle me-1"></i> Reset Filters
+      </button>
+    </div>
+
+    <div class="card-body">
+      <form class="row g-3">
+        <div class="col-md-4">
+          <label for="category" class="form-label">Category</label>
+          <select id="category" class="form-select" [ngModel]="selectedCategory"
+            (ngModelChange)="onCategoryChange($event)" name="category">
+            <option value="">All Categories</option>
+            <optgroup label="Categories">
+              <option *ngFor="let cat of categories" [value]="cat">
+                {{ cat | titlecase }}
+              </option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label for="language" class="form-label">Language</label>
+          <select id="language" class="form-select" [ngModel]="selectedLanguage"
+            (ngModelChange)="onLanguageChange($event)" name="language">
+            <option value="">All Languages</option>
+            <optgroup label="Languages">
+              <option *ngFor="let lang of languages" [value]="lang.code">
+                {{ lang.code | titlecase }} - {{ lang.name }}
+              </option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label for="country" class="form-label">Country</label>
+          <select id="country" class="form-select" [ngModel]="selectedCountry" (ngModelChange)="onCountryChange($event)"
+            name="country">
+            <option value="">All Countries</option>
+            <optgroup label="Countries">
+              <option *ngFor="let c of countries" [value]="c.code">
+                {{ c.name | titlecase }} - {{ c.code | titlecase }}
+              </option>
+            </optgroup>
+          </select>
+        </div>
+      </form>
+    </div>
+    <div class="card-footer small">
+      <div *ngIf="newsSources$ | async as sources" class="text-muted">
+        Showing <strong>{{ sources.length }}</strong> news source{{ sources.length === 1 ? '' : 's' }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Skeleton Loading State -->
+  <div *ngIf="isLoading" class="row g-4">
+    <div class="col-md-6 col-lg-4" *ngFor="let _ of [1, 2, 3, 4, 5, 6]">
+      <app-skeleton-source-card></app-skeleton-source-card>
+    </div>
+  </div>
+
+  <!-- Data Display -->
+  <div *ngIf="newsSources$ | async as sources" class="row g-4">
+    <ng-container *ngIf="sources.length > 0; else noSources">
+      <div *ngFor="let source of sources" class="col-md-6 col-lg-4">
+        <app-source-card [source]="source"></app-source-card>
+      </div>
+    </ng-container>
+  </div>
+
+  <ng-template #noSources>
+    <div class="text-center text-muted mt-5">
+      <p>
+        No sources found matching your filters
+      </p>
+    </div>
+  </ng-template>
+</div>
